@@ -15,10 +15,10 @@ class App extends Component {
     var pushedMessages = this.state.messages.map(results => results);
     console.log(pushedMessages);
   };
-  handleClick = () => {
-    var clickedButton = { handleClick };
-    console.log("It was clicked");
-  };
+  // handleClick = () => {
+  //   var clickedButton = { handleClick };
+  //   console.log("It was clicked");
+  // };
   async componentDidMount() {
     let responce = await fetch("http://localhost:8082/api/messages");
     let json = await responce.json();
@@ -34,8 +34,8 @@ class App extends Component {
     console.log("this.state.messages", this.state.messages);
     return (
       <div>
-        <Toolbar handleClick={handleClick} />
-        <MessageList populateMessages={this.state.populateMessages} />
+        <Toolbar />
+        <MessageList />
         <Message />
       </div>
     );
