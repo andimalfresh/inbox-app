@@ -1,7 +1,13 @@
 import React from "react";
-import Message from "./Message.jsx";
+import "../App.css";
+import Message from "./Message";
 
-const MessageList = props => {
-  return <Message />;
-};
-export default MessageList;
+const MessageList = (props) => {
+    return (
+        props.messages.map(message => {
+            return <Message />
+        })
+    )
+}
+
+export default MessageList
