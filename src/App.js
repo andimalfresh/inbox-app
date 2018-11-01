@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Toolbar from "./components/Toolbar";
 import MessageList from "./components/MessageList";
-import Message from "./components/Message";
 import "./App.css";
 
 class App extends Component {
@@ -11,14 +10,6 @@ class App extends Component {
       messages: []
     };
   }
-  populateMesages = () => {
-    var pushedMessages = this.state.messages.map(results => results);
-    console.log(pushedMessages);
-  };
-  // handleClick = () => {
-  //   var clickedButton = { handleClick };
-  //   console.log("It was clicked");
-  // };
   async componentDidMount() {
     let responce = await fetch("http://localhost:8082/api/messages");
     let json = await responce.json();
@@ -28,6 +19,11 @@ class App extends Component {
     this.setState({
       messages: json
     });
+  }
+  gettheSubject = () => {
+    this.state.messages.map(stuffFromApi => {
+        console.log(stuffFromApi)
+    })
   }
 
   render() {
