@@ -20,6 +20,19 @@ class App extends Component {
       messages: json
     });
   }
+messageRead = (id) => {
+  console.log("messageRead", id)
+  const updatedMessages = this.state.messages.map(message => {
+    if (message.id === id) {
+      message.read = !message.read
+    }
+    return message
+  })
+  this.setState ({
+    messages: updatedMessages
+  })
+}
+
   gettheSubject = () => {
     this.state.messages.map(stuffFromApi => {
         console.log(stuffFromApi)
@@ -27,11 +40,10 @@ class App extends Component {
   }
 
   render() {
-    console.log("this.state.messages", this.state.messages);
     return (
       <div>
         <Toolbar />
-        <MessageList messages={this.state.messages} />
+        <MessageList messageRead ={this.messageRead} messages={this.state.messages} />
       </div>
     );
   }
