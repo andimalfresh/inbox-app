@@ -15,7 +15,7 @@ const Toolbar = props => {
           />
         </button>
 
-        <button className="btn btn-default">Mark As Read</button>
+        <button className="btn btn-default"onClick={props.markAsReadButtonClicked}>Mark As Read</button>
 
         <button className="btn btn-default">Mark As Unread</button>
 
@@ -33,7 +33,7 @@ const Toolbar = props => {
           <option value="gschool">gschool</option>
         </select>
 
-        <button className="btn btn-default">
+        <button className="btn btn-default" onClick={props.deleteMessageButtonClicked}>
           <i className="fa fa-trash-o" />
         </button>
       </div>

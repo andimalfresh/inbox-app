@@ -20,6 +20,18 @@ class App extends Component {
       messages: json
     });
   }
+
+markAsReadButtonClicked = () => {
+  console.log("markAsReadButtonClicked")
+}
+
+deleteMessageButtonClicked = () => {
+  console.log("yoBischTrashCanClickedSon")
+}
+messageSelected = () => {
+  console.log("yoBischThisSelected")
+}
+
 messageRead = async (id) => {
   console.log("messageRead", id)
   
@@ -52,8 +64,8 @@ messageRead = async (id) => {
   render() {
     return (
       <div>
-        <Toolbar />
-        <MessageList messageRead ={this.messageRead} messages={this.state.messages} />
+        <Toolbar markAsReadButtonClicked={this.markAsReadButtonClicked} deleteMessageButtonClicked={this.deleteMessageButtonClicked} />
+        <MessageList messageSelected={this.messageSelected} messageRead={this.messageRead} messages={this.state.messages} />
       </div>
     );
   }
