@@ -11,7 +11,7 @@ const Toolbar = props => {
 
         <button className="btn btn-default">
           <i
-            className={true ? "fa fa-check-square-o" : "fa fa-minus-square-o"}
+            className={false ? "fa fa-check-square-o" : "fa fa-minus-square-o"}
           />
         </button>
 
